@@ -1,0 +1,1 @@
+console.log('JS connected'); // <== just a quick check up to make sure js doc is connected properly
