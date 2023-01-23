@@ -1,0 +1,12 @@
+body {
+background-image: url(../images/)
+}
+
+
+
+#start, #game-over {
+    font-family: ;
+    color: ;
+    display: flex; 
+    text-align: center;
+}
