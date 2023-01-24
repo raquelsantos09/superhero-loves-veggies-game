@@ -1,12 +1,49 @@
-body {
-background-image: url(../images/)
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/yellow-animals-background.jpg);
+    background-repeat: no-repeat;
+   /* font-family: 'Press Start 2P', cursive;*/
 }
+
+
+
+
+/*
+body {
+background-image: url(../images/yellow-animals-background.jpg);
+background-repeat: no-repeat;
+}
+
+*/
+canvas {
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/yellow-animals-background.jpg);
+  }
 
 
 
 #start, #game-over {
-    font-family: ;
-    color: ;
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/yellow-animals-background.jpg);
+    /*font-family: ;
+    color: ;*/
     display: flex; 
     text-align: center;
 }
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: monospace;
+    font-size: 10pt;
+
+}
+

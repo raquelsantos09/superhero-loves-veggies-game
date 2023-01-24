@@ -9,17 +9,26 @@
   </head>
   <body>
 
-    <canvas id="canvas" style="display:none"></canvas> 
-    <div id="start" style="display:none">
-        <a href="#" onclick="startGame()">Start Game</a>
+
+    <!-- Splash Screen: -->
+    <div id="start">
+      <button id="start-button">Start Game</button>
     </div>
-    <div id="game-over" style="display:none">
+
+     <!-- Game Screen: -->
+ <div id="game"></div>
+ <canvas id="canvas" width="1500" height="500"></canvas> 
+</div>
+
+
+    <!-- Game Over Screen: -->
+    <div id="game-over">
         <h1>Game Over</h1>
-        <a href="#" onclick="startGame()">Start Game</a>
+        <button id="restart-button">Restart Game</button>
     </div>
 
 
-
+    <!-- style="display:none ??-->
 
     <!-- <div class="game-intro">
       <img src="./images/logo.png" alt="" class="logo-img" />
@@ -30,9 +39,13 @@
     </div>
 
     <div id="game-board">
-      <canvas id="canvas" width="300" height="500"></canvas>
+      <canvas id="canvas" width="300" height="150"></canvas>
     </div> 
   -->
+
+  <footer class="footer">
+    <p>2023 - Made by Raquel Santos</p>
+  </footer>
     <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
