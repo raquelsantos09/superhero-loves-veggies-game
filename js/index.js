@@ -35,10 +35,7 @@ grapesImg.src = '../images/grapes.png';
 const watermelonImg = new Image(); 
 watermelonImg.src = '../images/watermelon.png'; 
 
-let superheroX = canvas.width/2-15;
-let cloudsY = -myCanvas.height; //??
 
-canvas.style.border = '2px solid black';
 
 
 //Variables:
@@ -47,6 +44,13 @@ const ctx = canvas.getContext('2d');
 let startDiv = document.getElementById("start");
 let gameOverScreen = document.getElementById("game-over");
 const startButton = document.querySelector("#start-button");
+let myObstacles = [];
+let obsImages = [hamburguerImg, sodaImg, bananasImg, appleImg, orangeImg, grapesImg, watermelonImg];
+
+let superheroX = canvas.width/2-15;
+let cloudsY = 0;
+
+canvas.style.border = '2px solid black';
 
 let isMovingLeft = false;
 let isMovingRight = false;
@@ -54,9 +58,6 @@ let isMovingRight = false;
 //Game Variables:
 let animateId = 0;
 let isGameOver = false;
-
-
-
 
 
 
@@ -74,19 +75,53 @@ function startGame() {
     animate();
 }
 
+class Obstacle{
+    constructor(x,y,width,height){
+      this.x = x;
+      this.y = y;
+      this.width = width;
+      this.height = height;
+      this.image = obsImages[Math.floor(Math.random() * obsImages.length)];
+    }
+}
+
+
+//setInterval(() => {
+  //  new Obstacle(randomX, randomY, 80, 80)
+   // }, 2000);
+
 
 
 function animate() {
     ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
-    ctx.drawImage(cloudsImg, 0, bg2y, myCanvas.width, myCanvas.height);
-    ctx.drawImage(superheroImg, superheroX, 400, 30, 60);
+    ctx.drawImage(cloudsImg, 0, cloudsY, canvas.width, canvas.height);
+    ctx.drawImage(superheroImg, superheroX, 380, 80, 100);
     if(isGameOver === true) {
         cancelAnimationFrame(animateId); 
     } else {
         animateId = requestAnimationFrame(animate);
     }
-}
 
+
+   
+      
+
+
+  if (isMovingLeft === true) {
+    superheroX -= 2
+  }
+  if (isMovingRight === true) {
+    superheroX += 2
+  }
+  
+  if (superheroX < 0) {
+    superheroX = 0;
+  }
+  if (superheroX >= canvas.width - 50) {
+    superheroX = canvas.width - 50;
+  }
+
+}
 
 function gameOver() {
     startDiv.style.display = "none";
@@ -94,3 +129,24 @@ function gameOver() {
     gameOverScreen.style.display = "block"; // Element is rendered as a block-level element
 }
 })
+
+// Moving the superhero:
+document.addEventListener('keydown', event => {
+    console.log(event);
+    if (event.code == 'ArrowLeft') {
+      // move superhero to the left
+      isMovingLeft = true
+    }
+    if (event.code == 'ArrowRight') {
+      // move superhero to the right
+      isMovingRight = true
+    }
+  })
+  
+
+  document.addEventListener('keyup', (event) => {
+    // Making the superhero stop
+    isMovingLeft = false
+    isMovingRight = false
+  })
+  

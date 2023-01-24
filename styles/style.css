@@ -1,26 +1,27 @@
-html {
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Press+Start+2P&display=swap');
+
+
+body {
+    display: flex; 
+    text-align: center;
+    align-items: center; 
     height: 100%;
     margin: 0;
     padding: 0;
     background-image: url(../images/yellow-animals-background.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
    /* font-family: 'Press Start 2P', cursive;*/
 }
 
 
-
-
-/*
-body {
-background-image: url(../images/yellow-animals-background.jpg);
-background-repeat: no-repeat;
-}
-
-*/
 canvas {
     display: flex;
     justify-content: center;
-    background-image: url(../images/yellow-animals-background.jpg);
+    align-items: center;   
+    flex-direction: column;
+    image: url(../images/clouds-background.jpg);
   }
 
 
@@ -28,11 +29,12 @@ canvas {
 #start, #game-over {
     display: flex;
     justify-content: center;
-    background-image: url(../images/yellow-animals-background.jpg);
     /*font-family: ;
     color: ;*/
     display: flex; 
     text-align: center;
+    align-items: center;   
+    flex-direction: column;
 }
 
 
