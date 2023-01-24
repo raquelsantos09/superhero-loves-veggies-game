@@ -25,7 +25,7 @@ List of states (views) of your game
 List of tasks in order of priority
 
 ## Links
-Trello Link
+Trello Link: https://trello.com/b/TXVawoX9/game-project
 Slides Link
-Github repository Link
+Github repository Link: https://github.com/raquelsantos09/superhero-loves-veggies-game
 Deployment Link

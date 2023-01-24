@@ -50,10 +50,13 @@ let obsImages = [hamburguerImg, sodaImg, bananasImg, appleImg, orangeImg, grapes
 let superheroX = canvas.width/2-15;
 let cloudsY = 0;
 
-canvas.style.border = '2px solid black';
+canvas.style.border = '4px solid black';
 
 let isMovingLeft = false;
 let isMovingRight = false;
+
+randomX =0;
+randomY = 0;
 
 //Game Variables:
 let animateId = 0;
@@ -86,9 +89,9 @@ class Obstacle{
 }
 
 
-//setInterval(() => {
-  //  new Obstacle(randomX, randomY, 80, 80)
-   // }, 2000);
+setInterval(() => {
+   new Obstacle(randomX, randomY, 80, 80)
+    }, 2000);
 
 
 

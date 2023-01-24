@@ -12,9 +12,37 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     flex-direction: column;
-   /* font-family: 'Press Start 2P', cursive;*/
+   font-family: 'Press Start 2P', cursive;
 }
 
+#start-button {
+    width: 220px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    height: 60px;
+    background-color: white;
+    border: solid 4px #6ba96a;
+    border-radius: 8px;
+    transition: all 200ms ease-in-out;
+}
+
+#restart-button {
+    width: 260px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    height: 60px;
+    background-color: white;
+    border: solid 4px #6ba96a;
+    border-radius: 8px;
+    transition: all 200ms ease-in-out;
+}
+
+#game {
+    display: flex;
+    align-items: center;
+  }
 
 canvas {
     display: flex;
@@ -22,6 +50,28 @@ canvas {
     align-items: center;   
     flex-direction: column;
     image: url(../images/clouds-background.jpg);
+    border: solid 4px black;
+    border-radius: 16px;
+  }
+
+  #player-lives {
+    margin-left: 20px;
+    background-color: #f7f4d6;
+    opacity: 0.9;
+    border-radius: 30px;
+    border: solid 4px black;
+    width: 6rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.heart-img {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: block;
   }
 
 
@@ -43,7 +93,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     font-family: monospace;
     font-size: 10pt;
 
