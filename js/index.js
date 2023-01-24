@@ -35,6 +35,20 @@ grapesImg.src = '../images/grapes.png';
 const watermelonImg = new Image(); 
 watermelonImg.src = '../images/watermelon.png'; 
 
+const broccoliImg = new Image(); 
+broccoliImg.src = '../images/broccoli.png'; 
+
+
+//Music:
+let introSound = new Audio(); 
+introSound.volume = 0.1;
+
+let music = new Audio(); 
+music.volume = 0.2;
+
+let gameOverAudio = new Audio(); 
+gameOverAudio.volume = 0.1;
+
 
 
 
@@ -44,8 +58,10 @@ const ctx = canvas.getContext('2d');
 let startDiv = document.getElementById("start");
 let gameOverScreen = document.getElementById("game-over");
 const startButton = document.querySelector("#start-button");
+const restartButton = document.querySelector("#restart-button");
+
 let myObstacles = [];
-let obsImages = [hamburguerImg, sodaImg, bananasImg, appleImg, orangeImg, grapesImg, watermelonImg];
+let obsImages = [hamburguerImg, sodaImg, bananasImg, appleImg, orangeImg, grapesImg, watermelonImg, broccoliImg];
 
 let superheroX = canvas.width/2-15;
 let cloudsY = 0;
@@ -55,8 +71,9 @@ canvas.style.border = '4px solid black';
 let isMovingLeft = false;
 let isMovingRight = false;
 
-randomX =0;
-randomY = 0;
+let randomX = 0;
+let randomY = 0;
+
 
 //Game Variables:
 let animateId = 0;
@@ -67,9 +84,15 @@ let isGameOver = false;
 window.addEventListener ('load', () => {
 canvas.style.display = 'none';
 
+
  startButton.addEventListener('click', () => {
     startGame();    
  })
+
+ restartButton.addEventListener('click', () => {
+    startGame();    
+ })
+
 
 function startGame() {
     startDiv.style.display = "none";
@@ -89,11 +112,6 @@ class Obstacle{
 }
 
 
-setInterval(() => {
-   new Obstacle(randomX, randomY, 80, 80)
-    }, 2000);
-
-
 
 function animate() {
     ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
@@ -107,14 +125,11 @@ function animate() {
 
 
    
-      
-
-
   if (isMovingLeft === true) {
-    superheroX -= 2
+    superheroX -= 6
   }
   if (isMovingRight === true) {
-    superheroX += 2
+    superheroX += 6
   }
   
   if (superheroX < 0) {
@@ -124,7 +139,12 @@ function animate() {
     superheroX = canvas.width - 50;
   }
 
+
+setInterval(() => {
+    new Obstacle(randomX, randomY, 80, 80)
+     }, 2000);
 }
+
 
 function gameOver() {
     startDiv.style.display = "none";
