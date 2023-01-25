@@ -49,9 +49,8 @@ music.volume = 0.2;
 let yeySound = new Audio(); 
 yeySound.volume = 0.1;
 
-//let gameOverAudio = new Audio(./audio/fail-trombone-03.wav); 
-//gameOverAudio.volume = 0.1;
-
+let gameOverAudio = new Audio("./audio/fail-trombone-03.wav"); 
+gameOverAudio.volume = 0.1;
 
 
 
@@ -62,6 +61,7 @@ let startDiv = document.getElementById("start");
 let gameOverScreen = document.getElementById("game-over");
 const startButton = document.querySelector("#start-button");
 const restartButton = document.querySelector("#restart-button");
+let livesDiv = document.getElementById("player-lives");
 
 let myObstacles = [];
 let obsImages = [hamburguerImg, sodaImg, bananasImg, appleImg, orangeImg, grapesImg, watermelonImg, broccoliImg];
@@ -74,6 +74,7 @@ let cloudsY = 0;
 
 canvas.style.border = '4px solid black';
 
+
 let isMovingLeft = false;
 let isMovingRight = false;
 
@@ -82,21 +83,21 @@ let animateId = 0;
 let isGameOver = false;
 
 
-
 window.addEventListener ('load', () => {
   canvas.style.display = 'none';
   startDiv.style.display = "block";
   gameOverScreen.style.display = "none";
+  livesDiv.style.display = "none";
       
-
 
   startButton.addEventListener('click', () => {
       startGame();    
   })
 
   restartButton.addEventListener('click', () => {
-      startGame();    
+    startGame();    
   })
+  
 
   // Moving the superhero:
 document.addEventListener('keydown', event => {
@@ -120,20 +121,20 @@ document.addEventListener('keyup', (event) => {
 })
 
 
-//function initialScreen() {
-  //startDiv.style.display = "block";
-    //canvas.style.display = "none"; 
-    //gameOverScreen.style.display = "none";
-    
-  
-//
-//}
+/*function initialScreen() {
+  startDiv.style.display = "block";
+  canvas.style.display = "none"; 
+  gameOverScreen.style.display = "none";
+  livesDiv.style.display = "none";
+  }
+  */
 
 
 function startGame() {
     startDiv.style.display = "none";
     canvas.style.display = "block"; // Element is rendered as a block-level element
     gameOverScreen.style.display = "none";
+    livesDiv.style.display = "flex";
     animate();
 }
 
@@ -209,17 +210,23 @@ function animate() {
       } else {
           animateId = requestAnimationFrame(animate);
       }
+
+      
     }
   
 
 function gameOver() {
     startDiv.style.display = "none";
     canvas.style.display = "none";
-    gameOverScreen.style.display = "block"; // Element is rendered as a block-level element
+    gameOverScreen.style.display = "flex"; // Element is rendered as a block-level element
+    livesDiv.style.display = "none";
 
 
+
+    
       }
 
   
 
 
+      
