@@ -84,19 +84,18 @@ let cloudsY = 0;
 
 canvas.style.border = '4px solid black';
 
-
 let isMovingLeft = false;
 let isMovingRight = false;
+
 
 //Game Variables:
 let animateId = 0;
 let isGameOver = false;
-
 let playerLives = 3;
 
 
 
-//Start screen:
+//START SCREEN:
 window.addEventListener ('load', () => {
   canvas.style.display = 'none';
   startDiv.style.display = "block";
@@ -107,13 +106,12 @@ window.addEventListener ('load', () => {
   startButton.addEventListener('click', () => {
     startGame();    
   })
-
-    restartButton.addEventListener("click",() => {
-      window.location.reload()
+  
+  restartButton.addEventListener("click",() => {
+    window.location.reload()
     })
     
     
-
     // Moving the superhero:
     document.addEventListener('keydown', event => {
       console.log(event);
@@ -137,7 +135,7 @@ window.addEventListener ('load', () => {
   
 
  
- //Game screen:
+ //GAME SCREEN:
  function startGame() {
    startDiv.style.display = "none";
    canvas.style.display = "block"; // Element is rendered as a block-level element
@@ -171,7 +169,11 @@ window.addEventListener ('load', () => {
         let obstacleIndex = goodObstacles.indexOf(goodObstacle);
         goodObstacles.splice(obstacleIndex, 1);
         score += 10;
-       
+
+        //add this if I have time to add a win screen, and change isGameOver to winscreen??
+       // if(score === 100) {
+         // isGameOver = true;
+        //}
       }
     }
   }
@@ -195,7 +197,6 @@ window.addEventListener ('load', () => {
       superheroHeight + superheroY > this.y
       ) {
         let obstacleIndex = badObstacles.indexOf(obstacle);
-
         playerLives -= 1;
         badObstacles.splice(obstacleIndex, 1);
         if(playerLives === 2) {
@@ -215,14 +216,11 @@ window.addEventListener ('load', () => {
     }
   
   function drawScore() {
-  ctx.fillText(`Score: ${score}`, 10, 30);
+    ctx.font = '18px monospace';
+    ctx.fillStyle = 'black';
+    ctx.fillText(`SCORE: ${score}`, 30, 50);
   }
   
-  
-   // ctx.font = '18px serif';
-    //ctx.fillStyle = 'black';
-  //}
-
 
   function animate() {
     ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
@@ -249,15 +247,7 @@ window.addEventListener ('load', () => {
 
     drawScore()
 
-    
-    // score: function () {
-      // const points = Math.floor(this.frames / 5);
-      //this.context.font = '18px serif';
-      //this.context.fillStyle = 'black';
-      // this.context.fillText(`Score: ${points}`, 350, 50);
-      //}
-      
-      
+  
       
       if (isMovingLeft === true) {
         superheroX -= 6
@@ -269,8 +259,8 @@ window.addEventListener ('load', () => {
       if (superheroX < 0) {
         superheroX = 0;
       }
-      if (superheroX >= canvas.width - 50) {
-        superheroX = canvas.width - 50;
+      if (superheroX >= canvas.width - 80) {
+        superheroX = canvas.width - 80;
       }
       
 
@@ -287,13 +277,13 @@ window.addEventListener ('load', () => {
     
     
 
-    //Game Over screen:
+    //GAME OVER SCREEN:
     function gameOver() {
       startDiv.style.display = "none";
       canvas.style.display = "none";
       gameOverScreen.style.display = "flex"; // Element is rendered as a block-level element
       livesDiv.style.display = "none";
-  
+      
       }
 
   

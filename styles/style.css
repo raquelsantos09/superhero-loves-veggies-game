@@ -79,8 +79,6 @@ canvas {
 #start, #game-over {
     display: flex;
     justify-content: center;
-    /*font-family: ;
-    color: ;*/
     display: flex; 
     text-align: center;
     align-items: center;   
