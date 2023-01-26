@@ -185,7 +185,7 @@ window.addEventListener ('load', () => {
       ) {
         playerLives -= 1;
         if(playerLives === 2) {
-          lives[0].src = "";
+          heart1.src = "";
         }
       }
     }
