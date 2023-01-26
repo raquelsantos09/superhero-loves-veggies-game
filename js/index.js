@@ -166,7 +166,7 @@ window.addEventListener ('load', () => {
   }
   
   class badObstacle{
-    constructor(x,y,width,height){
+    constructor(x, y, width, height){
       this.x = x;
       this.y = y;
       this.width = width;
@@ -176,31 +176,41 @@ window.addEventListener ('load', () => {
   drawObstacle() {
     ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
-  checkCollision() {
+  checkCollision(obstacle) {
     if (
       superheroX < this.x + this.width &&
       superheroX + superheroWidth > this.x &&
       superheroY < this.y + this.height &&
       superheroHeight + superheroY > this.y
       ) {
+        let obstacleIndex = badObstacles.indexOf(obstacle);
+
         playerLives -= 1;
+        badObstacles.splice(obstacleIndex, 1);
         if(playerLives === 2) {
-          heart1.src = "";
+          heart1.remove();
         }
+        if(playerLives === 1) {
+          heart2.remove();
+        }
+        //if(playerLives === 0) {
+          //isGameOver = true;
+      //}
+    }
+  }
+  
+  }
+
+  function checkLives() {
+    if (playerLives <= 0) {
+        isGameOver = true;
       }
     }
-  }
   
-  function ckeckLives() {
-  if (playerLives <= 0) {
-      isGameOver = true;
-    }
-  }
-  
-  function drawScore() {
-    ctx.font = '18px serif';
-    ctx.fillStyle = 'black';
-  }
+  //function drawScore() {
+   // ctx.font = '18px serif';
+    //ctx.fillStyle = 'black';
+  //}
 
 
   function animate() {
@@ -216,13 +226,13 @@ window.addEventListener ('load', () => {
     goodObstacles.forEach(goodObstacle => {
       goodObstacle.drawObstacle();
       goodObstacle.y += 2;
-      goodObstacle.checkCollision();
+      goodObstacle.checkCollision(goodObstacle);
     })      
 
     badObstacles.forEach(badObstacle => {
       badObstacle.drawObstacle();
       badObstacle.y += 2;
-      badObstacle.checkCollision();
+      badObstacle.checkCollision(badObstacle);
     })  
     
     
@@ -249,7 +259,9 @@ window.addEventListener ('load', () => {
         superheroX = canvas.width - 50;
       }
       
+
       
+      checkLives();
       
       if(isGameOver === true) {
         cancelAnimationFrame(animateId); 
@@ -257,8 +269,6 @@ window.addEventListener ('load', () => {
       } else {
         animateId = requestAnimationFrame(animate);
       }
-      
-      
     }
     
     
