@@ -66,6 +66,9 @@ let lives = document.querySelectorAll(".heart-img");
 let heart1 = document.getElementById("heart1");
 let heart2 = document.getElementById("heart2");
 let heart3 = document.getElementById("heart3");
+let scoreSpan = document.getElementById("score");
+let score = 0
+
 
 let badObstacles = [];
 let goodObstacles = [];
@@ -76,6 +79,7 @@ let superheroX = canvas.width/2-15;
 let superheroY = 380; 
 let superheroWidth = 80;
 let superheroHeight = 100;
+
 let cloudsY = 0;
 
 canvas.style.border = '4px solid black';
@@ -92,6 +96,7 @@ let playerLives = 3;
 
 
 
+//Start screen:
 window.addEventListener ('load', () => {
   canvas.style.display = 'none';
   startDiv.style.display = "block";
@@ -132,7 +137,7 @@ window.addEventListener ('load', () => {
   
 
  
- 
+ //Game screen:
  function startGame() {
    startDiv.style.display = "none";
    canvas.style.display = "block"; // Element is rendered as a block-level element
@@ -142,6 +147,8 @@ window.addEventListener ('load', () => {
   }
   
   
+
+  //Good and bad obstacles and collisions: 
   class goodObstacle{
     constructor(x,y,width,height){
       this.x = x;
@@ -153,7 +160,7 @@ window.addEventListener ('load', () => {
   drawObstacle() {
     ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
   }
-  checkCollision() {
+  checkCollision(goodObstacle) {
     if (
       superheroX < this.x + this.width &&
       superheroX + superheroWidth > this.x &&
@@ -161,6 +168,10 @@ window.addEventListener ('load', () => {
       superheroHeight + superheroY > this.y
       ) {
         isGameOver = false
+        let obstacleIndex = goodObstacles.indexOf(goodObstacle);
+        goodObstacles.splice(obstacleIndex, 1);
+        score += 10;
+       
       }
     }
   }
@@ -193,12 +204,8 @@ window.addEventListener ('load', () => {
         if(playerLives === 1) {
           heart2.remove();
         }
-        //if(playerLives === 0) {
-          //isGameOver = true;
-      //}
     }
   }
-  
   }
 
   function checkLives() {
@@ -207,7 +214,11 @@ window.addEventListener ('load', () => {
       }
     }
   
-  //function drawScore() {
+  function drawScore() {
+  ctx.fillText(`Score: ${score}`, 10, 30);
+  }
+  
+  
    // ctx.font = '18px serif';
     //ctx.fillStyle = 'black';
   //}
@@ -235,6 +246,9 @@ window.addEventListener ('load', () => {
       badObstacle.checkCollision(badObstacle);
     })  
     
+
+    drawScore()
+
     
     // score: function () {
       // const points = Math.floor(this.frames / 5);
@@ -272,6 +286,8 @@ window.addEventListener ('load', () => {
     }
     
     
+
+    //Game Over screen:
     function gameOver() {
       startDiv.style.display = "none";
       canvas.style.display = "none";
