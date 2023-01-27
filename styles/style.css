@@ -81,7 +81,7 @@ canvas {
 
 
 
-#start, #game-over {
+#start, #game-over, #you-win {
     display: flex;
     justify-content: center;
     display: flex; 
@@ -98,7 +98,7 @@ canvas {
     align-items: center;
     color: black;
     font-family: monospace;
-    font-size: 10pt;
+    font-size: 9pt;
 
 }
 

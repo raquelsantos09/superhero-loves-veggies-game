@@ -39,15 +39,20 @@ const broccoliImg = new Image();
 broccoliImg.src = './images/broccoli.png'; 
 
 
+
+
 //Music:
 let jungleSound = new Audio(); 
 jungleSound.volume = 0.1;
 
 let music = new Audio("./audio/Happy-Tree-Friends.mp3"); 
-music.volume = 0.2;
+music.volume = 0.1;
 
-let yeySound = new Audio(); 
+let yeySound = new Audio("audio/2090_small-dog-bark-01.mp3"); 
 yeySound.volume = 0.1;
+
+let ohNoSound = new Audio("audio/1565_man-saying-im-in-touble-01.wav"); 
+ohNoSound.volume = 0.2;
 
 let gameOverAudio = new Audio("./audio/fail-trombone-03.wav"); 
 gameOverAudio.volume = 0.1;
@@ -59,6 +64,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let startDiv = document.getElementById("start");
 let gameOverScreen = document.getElementById("game-over");
+let youWinScreen = document.getElementById("you-win");
 const startButton = document.querySelector("#start-button");
 const restartButton = document.getElementById("restart-button");
 let livesDiv = document.getElementById("player-lives");
@@ -66,9 +72,11 @@ let lives = document.querySelectorAll(".heart-img");
 let heart1 = document.getElementById("heart1");
 let heart2 = document.getElementById("heart2");
 let heart3 = document.getElementById("heart3");
+const footer = document.querySelector(".footer");
 let scoreSpan = document.getElementById("score");
+let scoreSpan2 = document.getElementById("score2");
 let score = 0;
-
+let speed = 2;
 
 let badObstacles = [];
 let goodObstacles = [];
@@ -101,6 +109,7 @@ window.addEventListener ('load', () => {
   startDiv.style.display = "block";
   gameOverScreen.style.display = "none";
   livesDiv.style.display = "none";
+  youWinScreen.style.display = "none";
   
   
   startButton.addEventListener('click', () => {
@@ -142,6 +151,9 @@ window.addEventListener ('load', () => {
    gameOverScreen.style.display = "none";
    livesDiv.style.display = "flex";
    animate();
+   music.play();
+  footer.style.display = "none";
+
   }
   
   
@@ -169,11 +181,11 @@ window.addEventListener ('load', () => {
         let obstacleIndex = goodObstacles.indexOf(goodObstacle);
         goodObstacles.splice(obstacleIndex, 1);
         score += 10;
+        yeySound.play();
 
-        //add this if I have time to add a win screen, and change isGameOver to winscreen??
-       // if(score === 100) {
-         // isGameOver = true;
-        //}
+       if(score === 100) {
+        isGameOver = true;
+        }
       }
     }
   }
@@ -198,6 +210,7 @@ window.addEventListener ('load', () => {
       ) {
         let obstacleIndex = badObstacles.indexOf(obstacle);
         playerLives -= 1;
+        ohNoSound.play();
         badObstacles.splice(obstacleIndex, 1);
         if(playerLives === 2) {
           heart1.remove();
@@ -234,19 +247,23 @@ window.addEventListener ('load', () => {
     
     goodObstacles.forEach(goodObstacle => {
       goodObstacle.drawObstacle();
-      goodObstacle.y += 2;
+      goodObstacle.y += speed;
       goodObstacle.checkCollision(goodObstacle);
     })      
 
     badObstacles.forEach(badObstacle => {
       badObstacle.drawObstacle();
-      badObstacle.y += 2;
+      badObstacle.y += speed;
       badObstacle.checkCollision(badObstacle);
     })  
     
 
     drawScore()
 
+    if(score === 50) {
+      bgImg.src = "./images/animals-background.jpg";
+      speed = 4;
+    }
   
       
       if (isMovingLeft === true) {
@@ -270,7 +287,10 @@ window.addEventListener ('load', () => {
       
       if(isGameOver === true) {
         cancelAnimationFrame(animateId); 
-        gameOver();
+        if (score === 100) {
+          youWin()
+        } else {
+        gameOver();}
       } else {
         animateId = requestAnimationFrame(animate);
       }
@@ -284,7 +304,22 @@ window.addEventListener ('load', () => {
       canvas.style.display = "none";
       gameOverScreen.style.display = "flex"; // Element is rendered as a block-level element
       livesDiv.style.display = "none";
-      
+      footer.style.display = "none";
+      music.pause();
+      gameOverAudio.play();
+      scoreSpan.innerText = score;
+      }
+
+         //WIN SCREEN:
+    function youWin() {
+      startDiv.style.display = "none";
+      canvas.style.display = "none";
+      gameOverScreen.style.display = "none"; 
+      youWinScreen.style.display = "flex"; // Element is rendered as a block-level element
+      livesDiv.style.display = "none";
+      footer.style.display = "none";
+     music.pause();
+      scoreSpan2.innerText = score;
       }
 
   
