@@ -57,6 +57,8 @@ ohNoSound.volume = 0.2;
 let gameOverAudio = new Audio("./audio/fail-trombone-03.wav"); 
 gameOverAudio.volume = 0.1;
 
+let winAudio = new Audio("./audio/win-sound.mp3"); 
+winAudio.volume = 0.1;
 
 
 //Variables:
@@ -321,6 +323,7 @@ window.addEventListener ('load', () => {
       livesDiv.style.display = "none";
       footer.style.display = "none";
      music.pause();
+     winAudio.play();
       scoreSpan2.innerText = score;
       }
 
