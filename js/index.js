@@ -40,7 +40,6 @@ broccoliImg.src = './images/broccoli.png';
 
 
 
-
 //Music:
 let jungleSound = new Audio(); 
 jungleSound.volume = 0.1;
@@ -116,12 +115,12 @@ window.addEventListener ('load', () => {
   
   
   startButton.addEventListener('click', () => {
-    startGame();    
+    startGame();
   })
   
   restartButton.addEventListener("click",() => {
     window.location.reload()
-    })
+  })
     
     
     // Moving the superhero:
@@ -140,8 +139,8 @@ window.addEventListener ('load', () => {
     
     document.addEventListener('keyup', (event) => {
       // making the superhero stop
-      isMovingLeft = false
-      isMovingRight = false
+      isMovingLeft = false;
+      isMovingRight = false;
     })
   })
   
@@ -284,7 +283,6 @@ window.addEventListener ('load', () => {
         superheroX = canvas.width - 80;
       }
       
-
       
       checkLives();
       
@@ -322,8 +320,8 @@ window.addEventListener ('load', () => {
       youWinScreen.style.display = "flex"; // Element is rendered as a block-level element
       livesDiv.style.display = "none";
       footer.style.display = "none";
-     music.pause();
-     winAudio.play();
+      music.pause();
+      winAudio.play();
       scoreSpan2.innerText = score;
       }
 
