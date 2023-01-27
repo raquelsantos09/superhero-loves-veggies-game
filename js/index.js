@@ -3,40 +3,40 @@ console.log('JS connected'); // <== just a quick check up to make sure js doc is
 
 //Images:
 const bgImg = new Image(); // Create new <img> element
-bgImg.src = '../images/yellow-animals-background.jpg'; // Set source path
+bgImg.src = './images/yellow-animals-background.jpg'; // Set source path
 
 const cloudsImg = new Image(); 
-cloudsImg.src = '../images/clouds-background.jpg'; 
+cloudsImg.src = './images/clouds-background.jpg'; 
 
 const superheroImg = new Image(); 
-superheroImg.src = '../images/superhero-dog.png'; 
+superheroImg.src = './images/superhero-dog.png'; 
 
 const livesImg = new Image(); 
-livesImg.src = '../images/heart.png'; 
+livesImg.src = './images/heart.png'; 
 
 const sodaImg = new Image(); 
 sodaImg.src = '../images/soda.png'; 
 
 const hamburguerImg = new Image(); 
-hamburguerImg.src = '../images/hamburger.png'; 
+hamburguerImg.src = './images/hamburger.png'; 
 
 const appleImg = new Image(); 
-appleImg.src = '../images/apple.png'; 
+appleImg.src = './images/apple.png'; 
 
 const bananasImg = new Image(); 
-bananasImg.src = '../images/bananas.png'; 
+bananasImg.src = './images/bananas.png'; 
 
 const orangeImg = new Image(); 
-orangeImg.src = '../images/orange.png'; 
+orangeImg.src = './images/orange.png'; 
 
 const grapesImg = new Image(); 
-grapesImg.src = '../images/grapes.png'; 
+grapesImg.src = './images/grapes.png'; 
 
 const watermelonImg = new Image(); 
-watermelonImg.src = '../images/watermelon.png'; 
+watermelonImg.src = './images/watermelon.png'; 
 
 const broccoliImg = new Image(); 
-broccoliImg.src = '../images/broccoli.png'; 
+broccoliImg.src = './images/broccoli.png'; 
 
 
 //Music:
