@@ -46,7 +46,7 @@ let jungleSound = new Audio();
 jungleSound.volume = 0.1;
 
 let music = new Audio("./audio/Happy-Tree-Friends.mp3"); 
-music.volume = 0.1;
+music.volume = 0.05;
 
 let yeySound = new Audio("audio/2090_small-dog-bark-01.mp3"); 
 yeySound.volume = 0.1;
@@ -67,7 +67,7 @@ let gameOverScreen = document.getElementById("game-over");
 let youWinScreen = document.getElementById("you-win");
 const startButton = document.querySelector("#start-button");
 const restartButton = document.getElementById("restart-button");
-const restartButtonWin = document.getElementById("restart-button-win");
+//const restartButtonWin = document.getElementById("restart-button-win");
 let livesDiv = document.getElementById("player-lives");
 let lives = document.querySelectorAll(".heart-img");
 let heart1 = document.getElementById("heart1");
