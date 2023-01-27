@@ -15,7 +15,7 @@ const livesImg = new Image();
 livesImg.src = './images/heart.png'; 
 
 const sodaImg = new Image(); 
-sodaImg.src = '../images/soda.png'; 
+sodaImg.src = './images/soda.png'; 
 
 const hamburguerImg = new Image(); 
 hamburguerImg.src = './images/hamburger.png'; 
@@ -67,7 +67,7 @@ let heart1 = document.getElementById("heart1");
 let heart2 = document.getElementById("heart2");
 let heart3 = document.getElementById("heart3");
 let scoreSpan = document.getElementById("score");
-let score = 0
+let score = 0;
 
 
 let badObstacles = [];
@@ -266,6 +266,7 @@ window.addEventListener ('load', () => {
 
       
       checkLives();
+      
       
       if(isGameOver === true) {
         cancelAnimationFrame(animateId); 
