@@ -15,6 +15,11 @@ body {
    font-family: 'Press Start 2P', cursive;
 }
 
+.instructions {
+margin: 2rem;
+line-height: 1.5rem;
+}
+
 #start-button {
     width: 220px;
     font-family: 'Press Start 2P', cursive;
