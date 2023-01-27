@@ -67,6 +67,7 @@ let gameOverScreen = document.getElementById("game-over");
 let youWinScreen = document.getElementById("you-win");
 const startButton = document.querySelector("#start-button");
 const restartButton = document.getElementById("restart-button");
+const restartButtonWin = document.getElementById("restart-button-win");
 let livesDiv = document.getElementById("player-lives");
 let lives = document.querySelectorAll(".heart-img");
 let heart1 = document.getElementById("heart1");
@@ -151,6 +152,7 @@ window.addEventListener ('load', () => {
    gameOverScreen.style.display = "none";
    livesDiv.style.display = "flex";
    animate();
+   music.loop = true;
    music.play();
   footer.style.display = "none";
 
