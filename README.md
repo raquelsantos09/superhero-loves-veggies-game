@@ -26,6 +26,6 @@ List of tasks in order of priority
 
 ## Links
 Trello Link: https://trello.com/b/TXVawoX9/game-project
-Slides Link: 
+Slides Link: https://docs.google.com/presentation/d/173yszb5lhNQ0wg1ufc-cIET7OhT-5ZTovh5Cr0iROyM/edit?usp=sharing
 Github repository Link: https://github.com/raquelsantos09/superhero-loves-veggies-game
-Deployment Link
+Deployment Link: https://raquelsantos09.github.io/superhero-loves-veggies-game/
