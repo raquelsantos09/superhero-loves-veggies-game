@@ -1,5 +1,5 @@
 ## Project's name
-Superhero Loves Veggies
+Superhero Loves Veggies.
 Click [here](http://raquelsantos09.github.io/superhero-loves-veggies-game/) to see the deployed game.
 
 ## Description
