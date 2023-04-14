@@ -38,10 +38,6 @@ List of states (views) of your game
  - gameOverScreen
  - GameWinScreen
 
-<!--
-## Task
-List of tasks in order of priority
--->
 
 ## Links
 - Trello Link: https://trello.com/b/TXVawoX9/game-project
