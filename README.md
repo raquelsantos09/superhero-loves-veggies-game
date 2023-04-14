@@ -11,7 +11,7 @@ Click [here](http://raquelsantos09.github.io/superhero-loves-veggies-game/) to s
 - One character: SuperDog
 - SuperDog can move horizontally using the left and right key arrows on the keyboard.
 - Fruits and vegetables appear randomnly from the top of the screen. Whenever they are collected, the score increases.
-- Junk food (hamburguers and coca-colas) also appear randomnly from the top of the screen. Whenever one of the items is collected, SuperDog loses one live.
+- Junk food (hamburguers and coca-colas) also appear randomnly from the top of the screen. Whenever one of this items is collected, SuperDog loses one live.
 - Score counter on the left top corner of the game board: score is counting untill 100.
 - If SuperDog loses 3 lives, is game over.
 - By reaching a score of 100, game is won.
