@@ -4,6 +4,9 @@ Click [here](http://raquelsantos09.github.io/superhero-loves-veggies-game/) to s
 
 ## Description
 - SuperHero Loves Veggies is an educational game made for kids, although it can be played by everyone. 
+- In order to save the animals in danger, SuperDog needs to catch as many fruits and vegetables as he can.
+Hopefully he can save his friends!
+- The goal is to catch all the fruits and veggies that comes in SuperDog way and avoid the junk food!
 - Made with Canvas and DOM manipulation.
 
 
@@ -12,9 +15,10 @@ Click [here](http://raquelsantos09.github.io/superhero-loves-veggies-game/) to s
 - SuperDog can move horizontally using the left and right key arrows on the keyboard.
 - Fruits and vegetables appear randomnly from the top of the screen. Whenever they are collected, the score increases.
 - Junk food (hamburguers and coca-colas) also appear randomnly from the top of the screen. Whenever one of this items is collected, SuperDog loses one live.
+- After collecting 5 fruits or vegetables the speed of the falling objects increases.
 - Score counter on the left top corner of the game board: score is counting untill 100.
 - If SuperDog loses 3 lives, is game over.
-- By reaching a score of 100, game is won.
+- By reaching a score of 100, by collecting 10 fruits and vegetables, game is won.
 
 <!--
 ## Backlog
