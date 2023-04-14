@@ -7,7 +7,14 @@ SuperHero Loves Veggies is an educational game made for kids, although it can be
 
 
 ## MVP
-MVP definition here, list of minimum features
+- one character: SuperDog
+- SuperDog can move horizontally using the left and right key arrows on the keyboard
+- fruits and vegetables appear randomnly from the top of the screen. Whenever they are collected, the score increases.
+- junk food (hamburguers and coca-colas) also appear randomnly from the top of the screen. Whenever one of the items is collected, SuperDog loses one live.
+- score counter on the left top corner of the game board: score is counting untill 100
+- If SuperDog loses 3 lives, is game over
+- By reaching a score of 100, game is won
+
 
 ## Backlog
 List of features you might implement after the MVP
@@ -21,6 +28,7 @@ List of states (views) of your game
  - splashScreen
  - gameScreen
  - gameOverScreen
+ - GameWinScreen
 
 ## Task
 List of tasks in order of priority
