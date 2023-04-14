@@ -16,13 +16,14 @@ Click [here](http://raquelsantos09.github.io/superhero-loves-veggies-game/) to s
 - If SuperDog loses 3 lives, is game over.
 - By reaching a score of 100, game is won.
 
-
+<!--
 ## Backlog
 List of features you might implement after the MVP
 
 ## Data structure
 List of classes and methods
 
+-->
 ## States y States Transitions
 List of states (views) of your game
 
@@ -31,8 +32,10 @@ List of states (views) of your game
  - gameOverScreen
  - GameWinScreen
 
+<!--
 ## Task
 List of tasks in order of priority
+-->
 
 ## Links
 - Trello Link: https://trello.com/b/TXVawoX9/game-project
