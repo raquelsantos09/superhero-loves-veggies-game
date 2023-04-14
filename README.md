@@ -1,4 +1,4 @@
-![SuperDog](<img src="/images/superhero-dog.png" height=60px>)
+<img src="/images/superhero-dog.png" height=100>
 
 ## Project's name
 Superhero Loves Veggies.
