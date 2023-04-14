@@ -1,9 +1,10 @@
 ## Project's name
 Superhero Loves Veggies
-Click here to see deployed game
+Click [here](http://raquelsantos09.github.io/superhero-loves-veggies-game/) to see the deployed game.
 
 ## Description
-Brief description of the project
+SuperHero Loves Veggies is an educational game made for kids, although it can be played for everyone, made with Canvas and DOM manipulation.
+
 
 ## MVP
 MVP definition here, list of minimum features
@@ -25,7 +26,7 @@ List of states (views) of your game
 List of tasks in order of priority
 
 ## Links
-Trello Link: https://trello.com/b/TXVawoX9/game-project
-Slides Link: https://docs.google.com/presentation/d/173yszb5lhNQ0wg1ufc-cIET7OhT-5ZTovh5Cr0iROyM/edit?usp=sharing
-Github repository Link: https://github.com/raquelsantos09/superhero-loves-veggies-game
-Deployment Link: https://raquelsantos09.github.io/superhero-loves-veggies-game/
+- Trello Link: https://trello.com/b/TXVawoX9/game-project
+- Slides Link: https://docs.google.com/presentation/d/173yszb5lhNQ0wg1ufc-cIET7OhT-5ZTovh5Cr0iROyM/edit?usp=sharing
+- Github repository Link: https://github.com/raquelsantos09/superhero-loves-veggies-game
+- Deployment Link: https://raquelsantos09.github.io/superhero-loves-veggies-game/
